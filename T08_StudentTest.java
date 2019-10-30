@@ -1,4 +1,4 @@
-package kr.or.ddit.basic;
+﻿package kr.or.ddit.basic;
 /*
 	문제 ) 학번, 이름, 국어점수, 영어점수, 수학점수, 총점, 등수를 멤버로 갖는
 		Student클래스를 만든다.
@@ -174,3 +174,5 @@ class Student implements Comparable<Student> {
 }
 
 
+
+test1
