@@ -8,7 +8,7 @@
 		List에 저장된 데이터들은 학번의 오름차순으로 정렬하여 출력하는 부분과
 		총점의 역순으로 정렬하는 부분을 프로그램 하시오.
 		(총점이 같으면 학번의 내림차순으로 정렬되도록 한다.)
-		(학번 정렬기준은 Student클래스 자체에서 제공하도록 하고, 
+		(학번 정렬기준은 Student클래스 자체에서 제공하도록 하고,
 		총점 정렬기준은 외부클래스에서 제공하도록 한다.)
  */
 
@@ -25,7 +25,7 @@ public class T08_StudentTest {
 		stuList.add(new Student(120, "박성만", 64, 53, 37));
 		stuList.add(new Student(824, "조윤정", 34, 54, 89));
 		stuList.add(new Student(319, "박신규", 62, 84, 93));
-		stuList.add(new Student(120, "이중훈", 35, 73, 69));
+		stuList.add(new Student(121, "이중훈", 35, 73, 69));
 		
 		for (int i =0; i<stuList.size(); i++) {
 			stuList.get(i).setRank(1);
@@ -63,17 +63,11 @@ class SortNumDesc1 implements Comparator<Student>{
 	public int compare(Student stu1, Student stu2) {
 		if(stu1.getSum() > stu2.getSum()) {
 			return -1;   // 1로 바꾸고 else를 -1로 바꾸면 오름차순 정렬이 된다.
-		} else if(stu1.getSum() > stu2.getSum()) {
-			return 0;
+		} else if(stu1.getSum() == stu2.getSum()) {
+			return Integer.compare(stu1.getSnum(), stu2.getSnum()) * -1;
 		} else {
-			return 1;    //
+			return 1;
 		}
-		
-		//Wrapper클래스에서 제공하는 메서드를 이용하는 방법
-		//return Integer.compare(mem1.getNum(), mem2.getNum()) * -1;
-		
-		//Wrapper클래스에서 제공하는 메서드를 이용하는 방법2
-		//return new Integer(stu1.getSnum()).compareTo(stu2.getSnum()) * -1;
 	}
 }
 
@@ -94,6 +88,7 @@ class Student implements Comparable<Student> {
 		this.eng = eng;
 		this.math = math;
 		this.sum = kook + eng + math;
+		this.rank = 1;
 	}
 	
 	public int getSum() {
@@ -151,28 +146,14 @@ class Student implements Comparable<Student> {
 	public void setMath(int math) {
 		this.math = math;
 	}
-
-//	@Override
-//	public int compareTo(Student stu) {
-//		return Integer.compare(getSnum(), stu.getSnum()) * 1;
-//	}
-	
-//	@Override
-//	public int compareTo(Student stu) {
-//		return getSnum().compareTo(stu.getSnum());
-//	}
 	
 	@Override
 	public int compareTo(Student stu) {
-		return Integer.compare(getSum(), stu.getSum()) * -1;
+		return Integer.compare(getSnum(), stu.getSnum());
 	}
 	
 	@Override
 	public String toString() {
-		return "Student[학번 = " + snum + ", 이름 = " + name + ", 국어 = " + kook +", 수학 = " + math +" 영어 = " + eng +" 총점 = "+ sum + " 등수= "+rank+"]";
+		return "Student[학번 = " + snum + ", 이름 = " + name + ", 국어 = " + kook +", 수학 = " + math +" 영어 = " + eng +" 총점 = "+ sum + " 등수 = "+rank+"]";
 	}
 }
-
-
-
-test1
