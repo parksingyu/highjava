@@ -85,6 +85,5 @@ public class T02_EnumTest {
 		System.out.println("대구 => " + city.compareTo(City.대구));
 		System.out.println("서울 => " + city.compareTo(City.서울));
 		System.out.println("대전 => " + city.compareTo(City.대전));
-		
 	}
 }

@@ -20,6 +20,7 @@ package kr.or.ddit.basic;
 	V => Value
 	E => Element(자료구조에 들어가는 것들을 나타낼 때 사용)
 	
+	쓰는 이유 : 타입 안정성. 타입에 대한 명확한 제한.
 	*/
 class NonGenericClass {
 	private Object val;

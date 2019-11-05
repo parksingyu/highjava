@@ -20,15 +20,19 @@ public class T03_GenericTest2 {
 class Generic<T>{
 	private T name;
 	private T phonenum;
+	
 	public T getName() {
 		return name;
 	}
+	
 	public void setName(T name) {
 		this.name = name;
 	}
+	
 	public T getPhonenum() {
 		return phonenum;
 	}
+	
 	public void setPhonenum(T phonenum) {
 		this.phonenum = phonenum;
 	}
