@@ -31,9 +31,7 @@ public class T03_ThreadTest {
  *
  */
 
-
 class MyRunner implements Runnable {
-
 	@Override
 	public void run() {
 		long sum = 0;
