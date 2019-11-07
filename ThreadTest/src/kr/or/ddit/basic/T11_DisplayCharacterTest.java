@@ -56,6 +56,7 @@ class DisplayCharacter extends Thread{
 			}
 		}
 		System.out.println(name + " 출력 끝...");
+		
 		T11_DisplayCharacterTest.strRank += name + " " ;
 	}
 }

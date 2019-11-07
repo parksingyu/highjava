@@ -17,13 +17,15 @@ package kr.or.ddit.basic;
 	 결   과 : 당신이 이겼습니다.
  */
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class T07_ThreadGame {
 	public static boolean inputCheck = false;
 
 	public static void main(String[] args) {
-
+		
 		Thread in = new DataInput1();
 		Thread out = new CountDown1();
 
