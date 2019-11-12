@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-
 public class T02_FileTest {
 
 	public static void main(String[] args) {
@@ -25,7 +24,6 @@ public class T02_FileTest {
 				e.printStackTrace();
 			}
 		}
-		
 		if(f2.exists()){
 			System.out.println(f2.getAbsolutePath() + "은 존재합니다.");
 		}else{
@@ -43,7 +41,6 @@ public class T02_FileTest {
 				System.out.println("디렉토리");
 			}
 		}
-		
 		System.out.println("=========================");
 		String[] strFiles = f3.list();
 		for(int i=0; i<strFiles.length; i++){
@@ -53,10 +50,10 @@ public class T02_FileTest {
 		System.out.println();
 		
 		// 출력할 디렉토리 정보를 갖는 File객체 생성
-		File f4 = new File("D:/C_Lib");   
+		//File f4 = new File("D:/C_Lib");   
+		File f4 = new File("D:/D_Other");
 		
 		displayFileList(f4);  // 메서드 호출
-		
 	}  // main메서드 끝.
 	
 	// 지정된 디렉토리(폴더)에 포함된 파일과 디렉토리 목록을 보여주는 메서드
@@ -79,13 +76,12 @@ public class T02_FileTest {
 			if(files[i].isDirectory()){
 				attr = "<DIR>";
 				subDirList.add(i);  // 첨자를 List에 추가
-			}else{
+			} else {
 				size = files[i].length() + "";
 				attr = files[i].canRead() ? "R" : " ";
 				attr += files[i].canWrite() ? "W" : " ";
 				attr += files[i].isHidden() ? "H" : " ";
 			}
-			
 			System.out.printf("%s %5s %12s %s\n",
 					sdf.format(new Date(files[i].lastModified())), attr,
 					size, files[i].getName() );

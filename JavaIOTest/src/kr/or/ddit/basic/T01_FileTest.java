@@ -18,9 +18,9 @@ public class T01_FileTest {
 		File file2 = new File("d:/D_Other");
 		//File file2 = new File("d:/D_Other/text.txt");
 		System.out.println(file2.getName() + "은 ");
-		if(file2.isFile()) {
+		if(file2.isFile()) {  // isFile은 해당 객체가 파일인지 폴더인지 알려준다.
 			System.out.println("파일");
-		} else if(file2.isDirectory()) {
+		} else if(file2.isDirectory()) { // isDirectory는 해당 객체가 파일인지 폴더인지 알려준다.
 			System.out.println("디렉토리(폴더)");
 		}
 		System.out.println("------------------------");
@@ -46,7 +46,7 @@ public class T01_FileTest {
 		 => 위 두 메서드 모두 만들기를 성공하면 true, 실패하면 false를 반환함.
 		 */
 		File file5 = new File("d:/D_Other/연습용");
-		if(file5.mkdir()) {
+		if(file5.mkdir()) { //mkdir은 디렉토리를 만드는 코드.
 			System.out.println(file5.getName() + " 만들기 성공!");
 		} else {
 			System.out.println(file5.getName() + " 만들기 실패!!!!");
@@ -54,7 +54,7 @@ public class T01_FileTest {
 		System.out.println();
 		
 		File file6 = new File("d:/D_Other/test/java/src");
-		if(file6.mkdirs()) {
+		if(file6.mkdirs()) {  // mkdirs는 폴더 하위까지 만들어 주는 코드
 			System.out.println(file6.getName() + " 만들기 성공!");
 		} else {
 			System.out.println(file6.getName() + " 만들기 실패!!!");

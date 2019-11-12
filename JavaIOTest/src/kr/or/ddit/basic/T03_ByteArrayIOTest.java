@@ -29,7 +29,6 @@ public class T03_ByteArrayIOTest {
 		
 		System.out.println("inSrc => " + Arrays.toString(inSrc));
 		System.out.println("outSrc => " + Arrays.toString(outSrc));
-		
 		try {
 			// 자원 반납
 			input.close();
