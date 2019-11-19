@@ -29,6 +29,7 @@ public class T06_FileStreamTest {
 			while((c=fin.read()) != -1) {
 				System.out.print((char)c);
 			}
+			
 			System.out.println();
 			System.out.println("출력 끝...");
 			fin.close();

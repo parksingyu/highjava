@@ -1,5 +1,6 @@
 package kr.or.ddit.basic;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,15 +10,20 @@ import java.io.InputStreamReader;
 public class T13_TulipCopy {
 	public static void main(String[] args) throws IOException {
 		// 문자 기반의 스트림을 이용한 파일 내용 읽기
-		FileReader fr = null;
+		//FileReader fr = null;
 		
 		FileReader fr2 = null;
 
 		// 문자 단위의 입력을 담당한 Reader형 객체 생성
 		//fr = new FileReader("d:/D_Other/testChar.txt");
-		fr = new FileReader("d:/D_Other/Tulips.jpg");
-		fr2 = new FileReader("d:/D_Other/copy_Tulips.jpg");
+		FileReader fr = new FileReader("d:/D_Other/Tulips.jpg");
 		
+		fr2 = fr;
+		
+		int d;
+		while((d=fr2.read()) != -1) {
+			System.out.print((char) d);
+		}
 		
 		int c;
 
